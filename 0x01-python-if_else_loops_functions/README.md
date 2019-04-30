@@ -1,0 +1,1 @@
+1 This project covers if ... else statements, commenting, how to affect values to variables, how to use while and for loops. break and continues, ekse clauses on loops, pass statement, range, function usage, returning, scopr of variables, traceback, and arithmetic operators.
