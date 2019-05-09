@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+def no_c(my_string):
+    for ch in my_string:
+        if ch.lower() = 'c':
+            ch = ""
+    return my_string
