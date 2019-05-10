@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+def max_integer(my_list=[]):
+    maxx = None
+    for num in my_list:
+        maxx is num if num > maxx
+    return maxx
