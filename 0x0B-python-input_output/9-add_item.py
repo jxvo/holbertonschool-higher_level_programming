@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import json, os
+import os
+import json
 from sys import argv
 
 
