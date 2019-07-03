@@ -8,18 +8,22 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *begin;
+	listint_t *skippy;
 	listint_t *node;
 
-	if (list == NULL)
-		return (NULL);
-	begin = list;
-	node = list->next;
-	while (node)
+	if (!list || !list->next)
+		return (0);
+	node = list;
+	skippy = list->next;
+
+	while (skippy && skippy->next && node && node->next)
 	{
-		if (node == begin)
+		if (skippy == node)
 			return (1);
-		else if (node == NULL)
+		skippy = skippy->next->next;
+	        if (!skippy)
+			break;
 		node = node->next;
 	}
+	return (0);
 }
