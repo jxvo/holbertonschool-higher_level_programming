@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+"""Base model"""
+import json
+import os.path
+import turtle
+
+
+class Base:
+    """Base class contains methods and id for all data models"""
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """Initialize an instance of Base
+        id: set to total number of objects created if not provided
+        """
+        if id is not None:
+            self.id = id
+        else:
+            self.id = __nb_objects += 1
