@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Base model"""
+"""module for Base model"""
 
 
 class Base:
@@ -8,7 +8,8 @@ class Base:
 
     def __init__(self, id=None):
         """Initialize an instance of Base
-        id: set to total number of objects created if not provided
+
+        id: set to number of base objects created if not already provided
         """
         if id is not None:
             self.id = id
