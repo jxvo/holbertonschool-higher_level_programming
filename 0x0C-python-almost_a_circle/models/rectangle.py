@@ -23,6 +23,11 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        """overwrites the string represetation of the rectangle's attributes"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
+
     def area(self):
         """returns the area of the rectangle"""
         return self.width * self.height
