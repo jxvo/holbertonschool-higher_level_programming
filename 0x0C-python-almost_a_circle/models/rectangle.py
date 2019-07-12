@@ -29,7 +29,7 @@ class Rectangle(Base):
 
     def display(self):
         """prints a visual representation of the rectangle"""
-        print("\n" * self.y - 1)
+        print('\n' * self.y, end="")
         for block in range(self.height):
             print(" " * self.x + "#" * self.width)
 
