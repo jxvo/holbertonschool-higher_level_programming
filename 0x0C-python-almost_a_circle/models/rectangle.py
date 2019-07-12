@@ -27,6 +27,12 @@ class Rectangle(Base):
         """returns the area of the rectangle"""
         return self.width * self.height
 
+    def display(self):
+        """prints a visual representation of the rectangle"""
+        print("\n" * self.y)
+        for block in range(self.height):
+            print(" " * self.x + "#" * self.width)
+
     @property
     def width(self):
         """returns private attribute"""
