@@ -45,9 +45,9 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def update(self, *args, **kwargs):
-        """updates the rectangles attributes using args and kw-args"""
+        """updates the rectangles attributes using args or kw-args"""
         attrs = ["id", "width", "height", "x", "y"]
-        if len(args) > 0:
+        if args:
             for idx in range(len(args)):
                 if args[idx]:
                     setattr(self, attrs[idx], args[idx])

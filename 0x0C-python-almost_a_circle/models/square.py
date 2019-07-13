@@ -18,7 +18,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """overwrites the string represetation of the rectangle's attributes"""
+        """overwrites the string represetation of the square's attributes"""
         return "[{}] ({}) {}/{} - {}".format(
             type(self).__name__,
             self.id,
@@ -26,6 +26,18 @@ class Square(Rectangle):
             self.y,
             self.size
         )
+
+    def update(self, *args, **kwargs):
+        """updates the square's attributes using args or kw-args"""
+        attrs = ["id", "size", "x", "y"]
+        if args:
+            for idx in range(len(args)):
+                if args[idx]:
+                    setattr(self, attrs[idx], args[idx])
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, value)
 
     @property
     def size(self):
