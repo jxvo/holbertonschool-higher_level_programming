@@ -25,7 +25,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """overwrites the string represetation of the rectangle's attributes"""
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
     def area(self):
@@ -42,13 +42,14 @@ class Rectangle(Base):
         """updates the rectangles attributes using args and kw-args"""
         attrs = ["id", "width", "height", "x", "y"]
         if len(args) > 0:
-           for idx in range(len(args)):
-               if args[idx]:
-                   setattr(self, attrs[idx], args[idx])
+            for idx in range(len(args)):
+                if args[idx]:
+                    setattr(self, attrs[idx], args[idx])
         elif kwargs:
             for key, value in kwargs.items():
                 if key in attrs:
                     setattr(self, key, value)
+
     @property
     def width(self):
         """returns private attribute"""
