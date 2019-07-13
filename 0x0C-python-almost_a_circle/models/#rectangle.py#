@@ -7,6 +7,8 @@ class Rectangle(Base):
     """contains grid position and height/width attributes,
     inherits ID from Base
     """
+    attrs = ["id", "width", "height", "x", "y"]
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialize a new rectangle
 
@@ -46,7 +48,6 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """updates the rectangles attributes using args or kw-args"""
-        attrs = ["id", "width", "height", "x", "y"]
         if args:
             for idx in range(len(args)):
                 if args[idx]:
@@ -58,7 +59,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns a dictionary of the rectangle's attributes"""
-        attrs = ["id", "width", "height", "x", "y"]
         this_dict = {}
         for idx in attrs:
             this_dict.update({idx: getattr(self, idx)})

@@ -6,6 +6,8 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """like a rectangle, but square (no width/height, just size)"""
+    attrs = ["id", "size", "x", "y"]
+
     def __init__(self, size, x=0, y=0, id=None):
         """initialize a new square
 
@@ -29,7 +31,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """updates the square's attributes using args or kw-args"""
-        attrs = ["id", "size", "x", "y"]
         if args:
             for idx in range(len(args)):
                 if args[idx]:
