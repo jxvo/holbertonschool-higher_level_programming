@@ -40,6 +40,13 @@ class Square(Rectangle):
                 if key in attrs:
                     setattr(self, key, value)
 
+    def to_dictionary(self):
+        """returns a dictionary of the rectangle's attributes"""
+        this_dict = {}
+        for idx in attrs:
+            this_dict.update({idx: getattr(self, idx)})
+        return this_dict
+
     @property
     def size(self):
         """returns rectangle's private width attribute"""
