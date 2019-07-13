@@ -26,6 +26,7 @@ class Square(Rectangle):
             self.y,
             self.size
         )
+
     @property
     def size(self):
         """returns rectangle's private width attribute"""
