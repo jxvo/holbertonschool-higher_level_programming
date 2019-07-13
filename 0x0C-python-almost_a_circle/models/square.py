@@ -28,11 +28,11 @@ class Square(Rectangle):
         )
     @property
     def size(self):
-        """returns private attribute"""
-        return self.__size
+        """returns rectangle's private width attribute"""
+        return self.width
 
-    @height.setter
+    @size.setter
     def size(self, value):
-        """sets private attribute based of rectangle's width and height attrs"""
+        """resets private attributes so be more sqaure-like"""
         self.width = value
         self.height = value
