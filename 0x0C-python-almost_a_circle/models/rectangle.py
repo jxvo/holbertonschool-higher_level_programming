@@ -2,8 +2,8 @@
 """module for Rectangle class that inherits from Base"""
 from models.base import Base
 
-
 attrs = ["id", "width", "height", "x", "y"]
+
 
 class Rectangle(Base):
     """contains grid position and height/width attributes"""

@@ -3,8 +3,8 @@
 from models.base import Base
 from models.rectangle import Rectangle
 
-
 attrs = ["id", "size", "x", "y"]
+
 
 class Square(Rectangle):
     """like a rectangle, but square (no width/height, just size)"""
