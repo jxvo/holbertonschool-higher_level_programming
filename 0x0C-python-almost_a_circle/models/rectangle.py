@@ -38,6 +38,16 @@ class Rectangle(Base):
         for block in range(self.height):
             print(" " * self.x + "#" * self.width)
 
+    def update(self, *args, **kwargs):
+        attrs = ["id", "width", "height", "x", "y"]
+        if len(args) > 0:
+           for idx in range(len(args)):
+               if args[idx]:
+                   setattr(self, attrs[idx], args[idx])
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, value)
     @property
     def width(self):
         """returns private attribute"""
