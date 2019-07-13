@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """module for Square class that inherits from Rectangle"""
 from models.base import Base
 from models.rectangle import Rectangle
