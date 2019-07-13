@@ -4,13 +4,13 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Contains grid position and height/width attributes,
+    """contains grid position and height/width attributes,
     inherits ID from Base
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new rectangle
+        """initialize a new rectangle
 
-        Arguments:
+        Arguments
         width: int width
         height: int height
         x: int x-coordinate
@@ -25,8 +25,14 @@ class Rectangle(Base):
 
     def __str__(self):
         """overwrites the string represetation of the rectangle's attributes"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
+        return "[{}] ({}) {}/{} - {}/{}".format(
+            type(self).__name__,
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )
 
     def area(self):
         """returns the area of the rectangle"""
