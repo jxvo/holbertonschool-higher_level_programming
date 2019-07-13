@@ -3,11 +3,10 @@
 from models.base import Base
 from models.rectangle import Rectangle
 
+attrs = ["id", "size", "x", "y"]
 
 class Square(Rectangle):
     """like a rectangle, but square (no width/height, just size)"""
-    attrs = ["id", "size", "x", "y"]
-
     def __init__(self, size, x=0, y=0, id=None):
         """initialize a new square
 
@@ -41,7 +40,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        """returns a dictionary of the rectangle's attributes"""
+        """returns a dictionary of the square's attributes"""
         this_dict = {}
         for idx in attrs:
             this_dict.update({idx: getattr(self, idx)})
