@@ -2,6 +2,7 @@
 """module for Base model"""
 import json
 
+
 class Base:
     """Base class contains methods and id for all data models"""
     __nb_objects = 0
