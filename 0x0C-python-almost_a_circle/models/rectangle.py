@@ -25,7 +25,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """overwrites the string represetation of the rectangle's attributes"""
-        return "[Rectangle] (<{}>) <{}>/<{}> - <{}>/<{}>".format(
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
     def area(self):
