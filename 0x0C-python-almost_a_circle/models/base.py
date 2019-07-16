@@ -2,6 +2,7 @@
 """module for Base model"""
 import json
 import os.path
+import csv
 
 
 class Base:
@@ -50,6 +51,39 @@ class Base:
         with open(cls.__name__ + ".json", "r") as json_file:
             obj_list = cls.from_json_string(json_file.read())
         return [cls.create(**attributes) for attributes in obj_list]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes CSV representation of a list of objects to a CSV file"""
+        if list_objs is None:
+            list_objs = []
+        if cls.__name__ == "Rectangle":
+            attrs = ["id", "width", "height", "x", "y"]
+        elif cls.__name__ == "Square":
+            attrs = ["id", "size", "x", "y"]
+        """each index will now contain a list of attribute values in order"""
+        list_objs = [[getattr(obj, attr) for attr in attrs] for obj in list_objs]
+        with open(cls.__name__ + ".csv", "w+", newline='') as csv_file:
+            writer = csv.writer(csv_file)
+            for obj in list_objs:
+                writer.writerow(obj)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """creates a list of instances from a CSV file"""
+        list_objs = []
+
+        if not os.path.exists(cls.__name__ + ".csv"):
+            return list_objs
+        if cls.__name__ == "Rectangle":
+            attrs = ["id", "width", "height", "x", "y"]
+        elif cls.__name__ == "Square":
+            attrs = ["id", "size", "x", "y"]
+        with open(cls.__name__ + ".csv", "r", newline="") as csv_file:
+            reader = csv.DictReader(csv_file, attrs)
+            for row in reader:
+                list_objs.append({key: int(val) for key, val in row.items()})
+        return [cls.create(**attributes) for attributes  in list_objs]
 
     @staticmethod
     def to_json_string(list_dictionaries):
