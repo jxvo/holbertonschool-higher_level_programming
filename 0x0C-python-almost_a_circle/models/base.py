@@ -3,6 +3,7 @@
 import json
 import os.path
 
+
 class Base:
     """Base class contains methods and id for all data models"""
     __nb_objects = 0
