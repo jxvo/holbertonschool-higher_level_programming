@@ -18,19 +18,15 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    @staticmethod
-    def to_json_string(list_dictionaries):
-        """returns the JSON representation of list of dictionaries"""
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-        return json.dumps(list_dictionaries)
-
-    @staticmethod
-    def from_json_string(json_string):
-        """returns a list of dictionaries from a JSON string"""
-        if json_string is None or len(json_string) == 0:
-            return []
-        return json.loads(json_string)
+    @classmethod
+    def create(cls, **dictionary):
+        """return a new instance with attrs taken int from a dictionary"""
+        if cls.__name__ == "Rectangle":
+            obj = cls(1, 1)
+        if cls.__name__ == "Square":
+            obj = cls(1)
+        obj.update(**dictionary)
+        return obj
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -44,3 +40,17 @@ class Base:
                 dict_list.append(obj.to_dictionary())
             with open(cls.__name__ + ".json", "w+") as json_file:
                 json_file.write(cls.to_json_string(dict_list))
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """returns the JSON representation of list of dictionaries"""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns a list of dictionaries from a JSON string"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
