@@ -1,0 +1,3 @@
+-- 6. LIST ALL ROWS OF TABLE
+-- list all fields of the given table
+SELECT * FROM first_table;
