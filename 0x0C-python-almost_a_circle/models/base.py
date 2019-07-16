@@ -62,7 +62,7 @@ class Base:
         elif cls.__name__ == "Square":
             attrs = ["id", "size", "x", "y"]
         """each index will now contain a list of attribute values in order"""
-        list_objs = [[getattr(obj, attr) for attr in attrs] for obj in list_objs]
+        list_objs = [[getattr(obj, atr) for atr in attrs] for obj in list_objs]
         with open(cls.__name__ + ".csv", "w+", newline='') as csv_file:
             writer = csv.writer(csv_file)
             for obj in list_objs:
@@ -83,7 +83,7 @@ class Base:
             reader = csv.DictReader(csv_file, attrs)
             for row in reader:
                 list_objs.append({key: int(val) for key, val in row.items()})
-        return [cls.create(**attributes) for attributes  in list_objs]
+        return [cls.create(**attributes) for attributes in list_objs]
 
     @staticmethod
     def to_json_string(list_dictionaries):
