@@ -3,7 +3,8 @@
 import json
 import os.path
 import csv
-
+import turtle
+import random
 
 class Base:
     """Base class contains methods and id for all data models"""
@@ -98,3 +99,29 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draw our shapes using the turtle module"""
+        colors = ["red", "purple", "violet", "blue", ,"teal",
+                  "green", "neon" "yellow", "orange"]
+        window = turtle.Screen()
+        window.bgcolor("black")
+        window.title("TURTLE TIME >:D")
+        timmy = turtle.Turtle()
+        turtle.shape("turtle")
+        for shapes in list_rectangles + list_squares:
+            turtle.color(random.choice(colors))
+            turtle.penup()
+            turtle.goto(shape.x, shape.y)
+            turtle.pendown()
+            for steps in range(4):
+                turtle.forward(shape.height)
+                turtle.left(random.randint(22, 77))
+                turtle.forward(shape.width)
+                turtle.right(90)
+                turtle.forward(shape.height)
+                turtle.right(random.randint(22, 77))
+                turtle.forward(shape.width)
+                turtle.left(90)
+        turtle.exitonclick()
