@@ -23,8 +23,9 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         if value is not None and not isinstance(value, Node):
-            raise TypeError("next node must be a Node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     def __init__(self):
@@ -32,7 +33,7 @@ class SinglyLinkedList:
         self.__head = None
 
     def __str__(self):
-        """return an appended list to stdout one node value per line, C-style"""
+        """return string to stdout one node value per line, C-style"""
         node = self.__head
         list_lines = []
         while node is not None:
