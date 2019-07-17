@@ -12,7 +12,7 @@ class Square:
         if self.__size == 0:
             return ""
         for idx in range(self.position[1]):
-            row.append('\n')
+            row.append("")
         for idx in range(self.__size):
             row.append(' ' * self.__position[0] + '#' * self.__size)
         return '\n'.join(row)
