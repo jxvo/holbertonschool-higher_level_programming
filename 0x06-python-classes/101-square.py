@@ -6,6 +6,17 @@ class Square:
         self.size = size
         self.position = position
 
+    def __str__(self):
+        """draw square using # characters"""
+        row = []
+        if self.__size == 0:
+            return ""
+        for idx in range(self.position[1]):
+            row.append('\n')
+        for idx in range(self.__size):
+            row.apend(' ' * self.__position[0] + '*' * self.__size)
+        return '\n'.join(rows)
+
     @property
     def size(self):
         """returns private attribute"""
