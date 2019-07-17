@@ -7,7 +7,7 @@ class Square:
         self.position = position
 
     def __str__(self):
-        """overwrite string representation to draw square from '#' characters"""
+        """overwrite string representation to shape from '#' characters"""
         row = []
         if self.__size == 0:
             return ""
