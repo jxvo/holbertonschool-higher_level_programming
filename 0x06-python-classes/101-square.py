@@ -14,8 +14,8 @@ class Square:
         for idx in range(self.position[1]):
             row.append('\n')
         for idx in range(self.__size):
-            row.apend(' ' * self.__position[0] + '*' * self.__size)
-        return '\n'.join(rows)
+            row.append(' ' * self.__position[0] + '*' * self.__size)
+        return '\n'.join(row)
 
     @property
     def size(self):
