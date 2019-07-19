@@ -4,6 +4,22 @@
 >>> list_a.print_sorted()
 [1, 2, 3, 4]
 
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(6)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 6, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5, 6]
+>>> print(my_list)
+[1, 4, 2, 3, 6, 5]
+
 >>> test_set = MyList(set(4, 3, 3, 2, 1))
 Traceback (most recent call last):
 TypeError: set expected at most 1 arguments, got 5
