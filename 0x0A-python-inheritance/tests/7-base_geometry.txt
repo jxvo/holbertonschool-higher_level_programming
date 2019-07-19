@@ -1,34 +1,31 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> BaseGeometry()
-<7-base_geometry.BaseGeometry object at 0x7fdb67c10cf8>
+>>> test_obj = BaseGeometry()
 
->>> obj = BaseGeometry()
+>>> test_obj.integer_validator("hello", 10)
 
->>> obj.integer_validator("hello", 10)
+>>> test_obj.integer_validator("width", 77)
 
->>> obj.integer_validator("width", 77)
+>>> test_obj.integer_validator(10, 10)
 
->>> obj.integer_validator(10, 10)
+>>> test_obj.integer_validator("age", int("15"))
 
->>> obj.integer_validator("age", int("15"))
-
->>> obj.integer_validator(77)
+>>> test_obj.integer_validator(77)
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> obj.integer_validator("key")
+>>> test_obj.integer_validator("key")
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> obj.integer_validator("null_key", None)
+>>> test_obj.integer_validator("null_key", None)
 Traceback (most recent call last):
 TypeError: null_key must be an integer
 
->>> obj.integer_validator("name", v)
+>>> test_obj.integer_validator("name", v)
 Traceback (most recent call last):
 NameError: name 'v' is not defined
 
->>> obj.integer_validator("age", 10.5)
+>>> test_obj.integer_validator("age", 10.5)
 Traceback (most recent call last):
 TypeError: age must be an integer
