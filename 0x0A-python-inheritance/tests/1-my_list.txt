@@ -61,7 +61,7 @@ TypeError: set expected at most 1 arguments, got 5
 ['b', 1, 21, 9]
 >>> test_dict.print_sorted()
 Traceback (most recent call last):
-TypeError: unorderable types: str() < int()
+TypeError: unorderable types: int() < str()
 
 >>> test_2Dlist = MyList([[7, 6, 5], 4, [3, 2, 1]])
 >>> print(test_2Dlist)
