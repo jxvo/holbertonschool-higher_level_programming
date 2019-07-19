@@ -1,7 +1,9 @@
 >>> MyList = __import__('1-my_list').MyList
 
->>> list_a = MyList([4, 3, 2, 1])
->>> list_a.print_sorted()
+>>> test_list = MyList([4, 3, 2, 1])
+>>> print(test_list)
+[4, 3, 2, 1]
+>>> test_list.print_sorted()
 [1, 2, 3, 4]
 
 >>> my_list = MyList()
@@ -20,25 +22,62 @@
 >>> print(my_list)
 [1, 4, 2, 3, 6, 5]
 
+>>> your_list = MyList()
+>>> print(your_list)
+[]
+>>> your_list.append(1)
+>>> your_list.append(2)
+>>> your_list.append(3)
+>>> your_list.append(4)
+>>> print(your_list)
+[1, 2, 3, 4]
+>>> your_list.print_sorted()
+[1, 2, 3, 4]
+
+>>> his_list = MyList(
+... )
+>>> his_list.append(4)
+>>> his_list.append(3)
+>>> his_list.append(2)
+>>> his_list.append(1)
+>>> his_list.append(-1)
+>>> print(his_list)
+[4, 3, 2, 1, -1]
+>>> his_list.print_sorted()
+[-1, 1, 2, 3, 4]
+
+>>> test_empty = MyList([])
+>>> print(test_empty)
+[]
+>>> test_empty.print_sorted()
+[]
+
 >>> test_set = MyList(set(4, 3, 3, 2, 1))
 Traceback (most recent call last):
 TypeError: set expected at most 1 arguments, got 5
 
 >>> test_dict = MyList({1:4, 9:2, 21:"a", "b":1})
+>>> print(test_dict)
+['b', 1, 21, 9]
 >>> test_dict.print_sorted()
 Traceback (most recent call last):
 TypeError: unorderable types: str() < int()
 
-
 >>> test_2Dlist = MyList([[7, 6, 5], 4, [3, 2, 1]])
+>>> print(test_2Dlist)
+[[7, 6, 5], 4, [3, 2, 1]]
 >>> test_2Dlist.print_sorted()
 Traceback (most recent call last):
 TypeError: unorderable types: int() < list()
 
 >>> test_tuple = MyList((5, 4, 3, 2, 1))
+>>> print(test_tuple)
+[5, 4, 3, 2, 1]
 >>> test_tuple.print_sorted()
 [1, 2, 3, 4, 5]
 
 >>> test_tuplist = MyList([(6, 5), (4, 3), (2, 1)])
+>>> print(test_tuplist)
+[(6, 5), (4, 3), (2, 1)]
 >>> test_tuplist.print_sorted()
 [(2, 1), (4, 3), (6, 5)]
