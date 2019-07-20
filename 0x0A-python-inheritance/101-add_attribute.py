@@ -3,7 +3,10 @@
 
 
 def add_attribute(obj, attr, value):
-    if hasattr(obj, "__dict__") and hasattr(obj, "__slots__"):
+    """__dict__ are for dynamic attributes
+    __slots__ is for pre-set attrs that can't be changed
+    """
+    if hasattr(obj, "__dict__") and not hasattr(obj, "__slots__"):
         setattr(obj, attr, value)
     else:
         raise TypeError("can't add new attribute")
