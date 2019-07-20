@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+def pascal_triangle(n):
+    list_init = [1]
+
+    for idx in range(n):
+        new_list = []
+        new_list.append(list_init[0])
+        for idx in range (len(list_init) - 1):
+            new_list.append(list_init[i] + list_init[idx + 1])
+        new_list.append(list_init[-1])
