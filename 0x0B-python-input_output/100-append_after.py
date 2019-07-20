@@ -3,7 +3,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """opens a file, parses each line to match string, and inserts new string"""
+    """opens a file, and inserts a string where match is found"""
     with open(filename, "r+") as txt_file:
         lines = []
         for line in txt_file:
