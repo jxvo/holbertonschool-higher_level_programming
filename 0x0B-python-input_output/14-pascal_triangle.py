@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 def pascal_triangle(n):
-    if n <= 0:
-        return []
-
-    pascal = []
-
-    for row in range(1, n + 1):
-        pascal.append(1)
-        for idx in range(row - 2, 0, -1):
-            pascal[idx] += pascal[idx -1]
-    return pascal
+    triangle = []
+    pascal = [1]
+    for row in range(n):
+        triangle.append(pascal)
+        temp_list = []
+        temp_list.append(pascal[0])
+        for idx in range(len(pascal) - 1):
+            temp_list.append(pascal[idx] + pascal[idx + 1])
+        temp_list.append(pascal[-1])
+        pascal = temp_list
+    return triangle
