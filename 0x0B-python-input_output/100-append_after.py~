@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+"""Advanced Task 15"""
+
+
+def append_after(filename="", search_string="", new_string=""):
+    """opens a file, parses each line to match string, and inserts new string"""
+    with open(filename, "r+") as txt_file:
+        lines = [line for line in txt_file]
+        print(lines)
