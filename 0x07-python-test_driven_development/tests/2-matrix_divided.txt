@@ -4,7 +4,46 @@
 ...     [1, 2, 3],
 ...     [4, 5, 6]
 ... ]
->>> print(matrix_divided(test_matrix, 3))
+>>> matrix_divided(test_matrix, 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
->>> print(test_matrix)
-[[1, 2, 3], [4, 5, 6]]
+
+>>> matrix_divided(test_matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix_divided(test_matrix, "three")
+Traceback (most recent call last):
+TypeError: div must be an integer
+
+>>> matrix_divided(test_matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix_divided(test_matrix, float('Inf'))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+>>> test_not_matrix = "hello"
+>>> matrix_divided(test_not_matrix, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> test_matrix_string = [
+...     [1, 2, 3],
+...     [4, "five", 6]
+... ]
+>>> print(matrix_divided(test_matrix_string, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> test_uneven_rows = [
+...     [1, 2, 3],
+...     [4, 5, 6, 7],
+...     [8, 9, 0]
+... ]
+>>> matrix_divided(test_uneven_rows, 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
