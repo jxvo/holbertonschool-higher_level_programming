@@ -9,6 +9,10 @@ My name is  No First Name
 >>> say_my_name("Bob")
 My name is Bob 
 
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
 >>> say_my_name("Bigboii", 15)
 Traceback (most recent call last):
 TypeError: last_name must be a string
