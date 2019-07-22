@@ -17,7 +17,7 @@ TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' an
 
 >>> matrix_divided(test_matrix, "three")
 Traceback (most recent call last):
-TypeError: div must be an integer
+TypeError: div must be a number
 
 >>> matrix_divided(test_matrix, 0)
 Traceback (most recent call last):
