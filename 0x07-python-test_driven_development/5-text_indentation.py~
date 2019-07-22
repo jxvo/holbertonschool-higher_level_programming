@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+def text_indentation(text):
+    """parse string and add two newlines after '.' '?' and ':' chars"""
+    if type(text) is not str:
+        raise TypeError("text must be a string")
+
+    indents = ('.', '?', ':')
+    start_idx = 0
+
+    for idx, current_char in enumerate(text):
+        for current_char in indents:
+            print(text[start_idx:idx + 1].strip() + '\n')
+            start_idx = idx + 1
+    print(text[start_idx:].strip(), end="")
