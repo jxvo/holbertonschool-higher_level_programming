@@ -7,4 +7,4 @@ def print_square(size):
         raise ValueError("size must be >= 0")
     else:
         for row in range(size):
-            print ('#' * size)
+            print('#' * size)
