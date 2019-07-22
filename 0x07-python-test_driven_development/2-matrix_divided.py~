@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+def matrix_divided(matrix, div):
+    """all elements of matrix are divided by div"""
+    new_matrix = []
+
+    for row in matrix:
+        if type(div) != int and type(div) != float:
+            raise TypeError("div must be an integer")
+        if div == 0:
+            raise ZeroDivisionError("division by zero")
+
+        new_row = []
+        if len(row) != len(matrix[0]):
+            raise TypeError("Each row of the matrix must have the same size")
+        for val in row:
+            if type(val) != (int, float):
+            raise TypeError(
+                "matrix must be a matrix (list of lists) of integers/floats")
+            new_row.append(val / div)
+        new_matrix.append(new_row)
+    return new_matrix
