@@ -4,7 +4,6 @@
 import os
 import unittest
 import importlib
-import json
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -45,11 +44,11 @@ class TestBase(unittest.TestCase):
         tsj_empty = []
         tsj_none = None
 
-        self.assertCountEqual(Base.to_json_string(tsj_std), '[{'id': 12}]')
+        self.assertCountEqual(Base.to_json_string(tsj_std), '[{"id": 12}]')
         self.assertCountEqual(Base.to_json_string(tsj_exp),
                               '[{"betty": 999, "holberton": 777}]')
-        self.assertCountEqual(Base.to_json_string(tsj_std), '[]')
-        self.assertCountEqual(Base.to_json_string(tsj_std), '[]')
+        self.assertCountEqual(Base.to_json_string(tsj_empty), '[]')
+        self.assertCountEqual(Base.to_json_string(tsj_none), '[]')
 
     def test_load_json(self):
         """test load from JSON method"""
@@ -65,15 +64,4 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.from_json_string(
             Base.to_json_string(tlj_empty)), tlj_empty)
         self.assertEqual(Base.from_json_string(
-            Base.to_json_string(tlj_none)), tlj_none)
-
-    """def test_save_csv(self):
-
-    def test_load_csv(self):
-
-    def test_to_json_string(self):
-
-    def test_from_json_string(self):
-
-    def test_draw(self):
-"""
+            Base.to_json_string(tlj_none)), [])
