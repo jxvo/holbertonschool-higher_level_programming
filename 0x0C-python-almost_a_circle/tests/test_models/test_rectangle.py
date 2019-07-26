@@ -104,3 +104,18 @@ class TestRectangle(unittest.TestCase):
 
         self.assertDictEqual(ttd_std.to_dictionary(), expected_std)
         self.assertDictEqual(ttd_all.to_dictionary(), expected_all)
+
+    def test_load_from_file(self):
+        """test load object from file"""
+        tlff_std = Rectangle(2, 4)
+        tlff_all = Rectangle(3, 6, 0, 0, 99)
+
+        list_input = [tlff_std, tlff_all]
+        Rectangle.save_to_file(list_input)
+
+        list_output = Rectangle.load_from_file()
+        self.assertTrue(type(list_output) == list)
+        for obj in list_input:
+            self.assertTrue(isinstance(obj, Rectangle))
+        for obj in list_output:
+            self.assertTrue(isinstance(obj, Rectangle))
