@@ -103,8 +103,8 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """draw our shapes using the turtle module"""
-        colors = ["red", "purple", "violet", "blue", ,"teal",
-                  "green", "neon" "yellow", "orange"]
+        colors = ["red", "purple", "violet", "blue", "teal",
+                  "green", "neon", "yellow", "orange"]
         window = turtle.Screen()
         window.bgcolor("black")
         window.title("TURTLE TIME >:D")
