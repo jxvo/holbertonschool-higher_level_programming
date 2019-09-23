@@ -1,0 +1,6 @@
+#!/usr/bin/node
+/* prints 3 lines (using for loop) */
+const myArr = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+for (var x = 0; x < 3; x++) {
+  console.log(myArr[x]);
+}
