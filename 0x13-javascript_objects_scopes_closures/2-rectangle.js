@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/node
 /* create an empty object when invalid parameters passed */
 class Rectangle {
   constructor (w, h) {
