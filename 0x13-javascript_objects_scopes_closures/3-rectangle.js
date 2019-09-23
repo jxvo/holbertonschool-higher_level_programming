@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* create an empty object when invalid parameters passed */
+/* define print() method to print a visual representation to stdout */
 class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
