@@ -3,7 +3,7 @@
 list all states from a MySQL database using the MySQLdb module
 arguments: [mysql username] [mysql password] [databasename]
 """
-from sys import argv
+import sys
 import MySQLdb
 
 
