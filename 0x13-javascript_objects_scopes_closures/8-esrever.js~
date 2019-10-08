@@ -1,0 +1,9 @@
+#!/usr/bin/node
+// returns a reversed version of a list
+exports.esrever = function (list) {
+  const reversed = [];
+  list.forEach(function () {
+    reversed.push(list.pop());
+  });
+  return reversed;
+};
