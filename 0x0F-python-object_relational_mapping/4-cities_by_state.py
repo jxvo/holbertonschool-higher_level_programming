@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-display all values in a 'states' table matching user parameter
-args: [mysql username] [mysql password] [database name] [state name]
+list all 'cities' values from a database using MySQLdb
+args: [mysql username] [mysql password] [database name]
 """
 import sys
 import MySQLdb
@@ -15,10 +15,12 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY name = '{}' \
-    ORDER BY id ASC".format(sys.argv[4]))
+
+    cur.execute(
+        "SELECT cities.id, cities.name, states.name FROM cities \
+        INNER JOIN states ON states.id = cities.state_id ORDER BY cities.id ASC"
+    )
     rows = cur.fetchall()
 
     for row in rows:
