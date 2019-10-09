@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-list all states from a MySQL database using the MySQLdb module
+filter states starting with capital 'N' using the MySQLdb module
 arguments: [mysql username] [mysql password] [databasename]
 """
 import sys
@@ -16,7 +16,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    cur.execute('SELECT * FROM states WHERE name LIKE "N%"')
+    cur.execute("SELECT * FROM states WHERE name REGEXP BINARY '[N]'")
     rows = cur.fetchall()
     for row in rows:
         print(row)
