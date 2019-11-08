@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends a curl request to find the size in bytes
-curl -sI "$1" | grep 'Content-Length' | cut -d ' ' -f 2
+# Sends a curl request, to find the size in
+curl -s "$1" | wc -c
