@@ -1,0 +1,4 @@
+Learn more or give us feedback
+$('#red_header').click(function () {
+    $('header').addClass('red');
+});
