@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
  module to perform a Twitter search
  usage: [API key] [API secret] [search string]
