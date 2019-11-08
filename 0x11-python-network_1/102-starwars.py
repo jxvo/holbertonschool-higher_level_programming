@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """GET JSON from Star Wars API"""
 
-from sys import argv
+import sys
 import requests
 
 
 if __name__ == '__main__':
-    search = {'search': argv[1]}
+    search = {'search': sys.argv[1]}
     url = 'https://swapi.co/api/people/'
     req = requests.get(url, params=search)
     json = req.json()
