@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+"""
+Module to filter objects containing 'a' inside a database using sqlalchemy
+usage: [mysql username] [mysql password] [database name]
+"""
 import sys
 from model_state import Base, State
 from sqlalchemy
 from sqlalchemy.orm import sessionmaker
 
-"""
-Module to filter objects containing 'a' inside a database using sqlalchemy
-usage: [mysql username] [mysql password] [database name]
-"""
+
 if __name__ == "__main__":
     engine = sqlalchemy.create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
