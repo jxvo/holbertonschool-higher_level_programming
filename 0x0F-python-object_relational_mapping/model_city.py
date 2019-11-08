@@ -2,9 +2,11 @@
 """Module for City class"""
 
 
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base, State
-import sqlalchemy
-import sqlalchemy.orm
+
+Base = declarative_base()
 
 
 class City (Base):
@@ -16,11 +18,11 @@ class City (Base):
         state_id (int): the ID of the state in which this state resides
     """
 
+    def __init(self):
+        pass
+
     __tablename__ = 'cities'
-    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True)
-    name = sqlalchemy.Column(sqlalchemy.String(256), nullable=False)
-    state_id = sqlalchemy.Column(
-        sqlalchemy.Integer,
-        sqlalchemy.ForeignKey('states.id')
-    )
-    state = sqlalchemy.orm.relationship('State', back_populates='cities')
+    id = Column(Integer, autoincrement=True, unique=True,
+                nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
