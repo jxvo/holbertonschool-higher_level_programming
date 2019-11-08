@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Send request to URL http://0.0.0.0:5000 and print formatted error"""
+
+
 from sys import argv
 import urllib.request
-
 
 
 if __name__ == "__main__":
