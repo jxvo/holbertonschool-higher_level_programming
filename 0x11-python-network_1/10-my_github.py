@@ -10,7 +10,7 @@ from sys import argv
 if __name__ == '__main__':
     usr = argv[1]
     passwd = argv[2]
-    url = 'https://api.github.com/users/{}'.format(sys.argv[1])
-    aye = requests.get(url, auth=(usr, passwd))
-    aye = dict(aye.json())
-    print(aye.get('id'))
+    url = 'https://api.github.com/users/{}'.format(argv[1])
+    req = requests.get(url, auth=(usr, passwd))
+    req = dict(req.json())
+    print(req.get('id'))
