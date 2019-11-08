@@ -2,7 +2,7 @@
 """State class which imports a table using SQLAlchemy"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-
+f
 Base = declarative_base()
 
 
